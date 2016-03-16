@@ -1,0 +1,13 @@
+﻿<h1>Tarefas</h1>
+<ul>
+    <li *ngFor="#task of getIncompleteTasks()">{{task.Description}} - <button (click)="completeTask(task)">Completa</button></li>
+</ul>
+<div *ngIf="completeTasksExist()">
+    <h2>Completas</h2>
+    <ul>
+        <li *ngFor="#task of getCompleteTasks()">{{task.Description}} </li>
+    </ul>
+</div>
+
+<input type="text" [(ngModel)]="newTask.Description" (keyup.enter)="createTask()" placeholder="Nova Tarefa" />
+<button (click)="createTask()" >Criar Tarefa</button>

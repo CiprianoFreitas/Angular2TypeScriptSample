@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="lib/es6-shim/es6-sham.min.js"></script>
+    <script src="lib/es6-promise/dist/es6-promise.js"></script>
+    <script src="lib/systemjs/dist/system-polyfills.js"></script>
+
+    <script src="lib/angular2/bundles/angular2-polyfills.min.js"></script>
+    <script src="lib/systemjs/dist/system.js"></script>
+    <script src="lib/rxjs/bundles/rx.min.js"></script>
+    <script src="lib/angular2/bundles/angular2.dev.js"></script>
+    <script src="lib/angular2/bundles/http.dev.js"></script>
+
+    <script>
+      System.config({
+        packages: {
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/main')
+            .then(null, console.error.bind(console));
+    </script>
+    <title>Angular 2</title>
+</head>
+<body>
+    <my-app>Loading...</my-app>
+</body>
+</html>
